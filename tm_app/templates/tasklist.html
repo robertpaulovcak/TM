@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+
+<h2>Tazke tu mame task list zoradeny podla statusu</h2>
+
+{% for task in task_ord %}
+<ol>
+     {{ task.person.name }} {{ task.task_name }} {{ task.status }}
+</ol>
+
+
+{% endfor %}
+</body>
+</html>

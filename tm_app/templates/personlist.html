@@ -8,9 +8,9 @@
 
 <h4>List of user</h4>
 {% for user in person %}
-{{ person.name }}
-
-{% endfor %)
-
+<ol>
+    <li><p>person name: <a href="{% url 'persontasklist' user.pk %}"> {{ user.name }}</a></p></li>
+</ol>
+{% endfor %}
 </body>
 </html>

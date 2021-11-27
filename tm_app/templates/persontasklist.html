@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Task List</title>
+</head>
+<body>
+
+<h2>tu mame task list pre urcitu osobu</h2>
+
+<h3>Responsible person: {{ list_per.name }}</h3>
+{% for person in list_per.task.all %}
+<ol>
+    {{ person.status }} {{ person.task_name }}
+</ol>
+
+
+{% endfor %}
+
+</body>
+</html>

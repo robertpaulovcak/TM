@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from tm_app.views import PersonList
+from tm_app.views import PersonList, TaskListOrd, TaskListPer
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('personlist/', PersonList, 'personlist')
+    path('personlist/', PersonList, name='personlist'),
+    path('tasklist/', TaskListOrd, name='tasklist'),
+    path('persontasklist/<int:pk>/', TaskListPer, name='persontasklist'),
 ]
