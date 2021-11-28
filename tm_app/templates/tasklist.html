@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task List</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h2>Tazke tu mame task list zoradeny podla statusu</h2>
+{% block body %}
 
-{% for task in task_ord %}
-<ol>
-     {{ task.person.name }} {{ task.task_name }} {{ task.status }}
-</ol>
+<div class="container">
+    <h2 style="text-align: center">Detail list of task and their status</h2><br>
 
+<table class="table table-striped">
+    <tr style="background:#1a75ff">
+        <th>Name</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Task Created At</th>
+    </tr>
+    {% for task in task_ord %}
+    <tr style="background:#80b3ff">
+        <th><a href="{% url 'persontasklist' task.id %}">{{ task.person.name }}</a></th>
+        <th>{{ task.task_name }}</th>
+        <th>{{ task.status }}</th>
+        <th>{{ task.created_at }}</th>
+    </tr>
+    {% endfor %}
+</table>
+</div>
 
-{% endfor %}
-</body>
-</html>
+{% endblock body %}

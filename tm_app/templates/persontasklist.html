@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Person Task List</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h2>tu mame task list pre urcitu osobu</h2>
+{% block body %}
 
-<h3>Responsible person: {{ list_per.name }}</h3>
+<div class="container">
+    <h2 style="text-align: center">Task List per person</h2>
+    <br>
+    <h4>Responsible person name: <b>{{ list_per.name }}</b></h4>
+    <br>
+    <h4>Detail list of task and their status</h4>
+
+<table class="table table-striped">
+    <tr style="background:#1a75ff">
+        <th>Task Name</th>
+        <th>Status</th>
+    </tr>
 {% for person in list_per.task.all %}
-<ol>
-    {{ person.status }} {{ person.task_name }}
-</ol>
+    <tr style="background:#80b3ff">
+        <th>{{ person.task_name }}</th>
+        <th>{{ person.status }}</th>
+    </tr>
+    {% endfor %}
+</table>
+</div>
 
 
-{% endfor %}
+{% endblock body %}
 
-</body>
-</html>

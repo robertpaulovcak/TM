@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Person List</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h4>List of user</h4>
-{% for user in person %}
-<ol>
-    <li><p>person name: <a href="{% url 'persontasklist' user.pk %}"> {{ user.name }}</a></p></li>
-</ol>
-{% endfor %}
-</body>
-</html>
+{% block body %}
+<div class="container">
+<h4 style="text-align: center">List of Person</h4><br>
+
+<table class="table table-striped">
+    <tr style="background:#1a75ff">
+        <th style="text-align: center">Person name</th>
+    </tr>
+{% for person in person %}
+    <tr style="background:#80b3ff">
+        <th style="text-align: center"><a href="{% url 'persontasklist' person.id %}">{{ person.name }}</a></th>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+{% endblock body %}
