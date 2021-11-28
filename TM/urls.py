@@ -21,7 +21,7 @@ from tm_app.views import TaskListOrd, homepage, TaskListPerView, PersonListView,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('personlist/', PersonListView.as_view(), name='personlist'),
-    path('tasklist/', TaskListOrd, name='tasklist'),
+    path('homepage/', TaskListOrd, name='tasklist'),
     path('persontasklist/<int:pk>/', TaskListPerView.as_view(), name='persontasklist'),
     path('homepage/', homepage, name='homepage'),
     path('create_task/', CreateTaskView.as_view(), name='create_task'),
