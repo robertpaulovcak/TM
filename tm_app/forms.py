@@ -13,5 +13,8 @@ class PersonForm(forms.ModelForm):
         model = Person
         fields = ['name']
 
+class Homepage(forms.ModelForm):
+    pass
+
 
 

@@ -11,18 +11,23 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" style="background:#9999ff">
   <div class="container">
-    <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'tasklist' %}">Homepage</a></button>
+    <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'tasklist' %}">Detail List</a></button>
+    <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'personlist' %}">Person List</a></button>
     <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'create_person' %}">Add Person</a></button>
     <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'create_task' %}">Add Task</a></button>
-      <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'personlist' %}">Person List</a></button>
-    <button type="button" class="btn btn-default navbar-btn">Log In</button>
-      <button type="button" class="btn btn-default navbar-btn">Log Out</button>
-      <button type="button" class="btn btn-default navbar-btn">Register</button>
+    <button type="button" class="btn btn-default navbar-btn">Log Out</button>
+    <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'login' %}">Log In</a></button>
+
   </div>
 </nav>
 
 <br><br><br>
-{% block body %}{% endblock body %}
+
+{% block body %}
+
+
+
+{% endblock body %}
 
 </body>
 </html>

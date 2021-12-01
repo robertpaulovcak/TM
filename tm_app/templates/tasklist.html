@@ -11,13 +11,17 @@
         <th>Task</th>
         <th>Status</th>
         <th>Task Created At</th>
+        <th></th>
+        <th></th>
     </tr>
     {% for task in task_ord %}
     <tr style="background:#80b3ff">
-        <th><a href="{% url 'persontasklist' task.id %}">{{ task.person.name }}</a></th>
+        <th><a href="{% url 'persontasklist' task.person.id %}">{{ task.person.name }}</a></th>
         <th>{{ task.task_name }}</th>
         <th>{{ task.status }}</th>
         <th>{{ task.created_at }}</th>
+        <th><a href="{% url 'update_task' task.id %}">Update Task</a></th>
+        <th><a href="{% url 'delete_task' task.id %}">Delete</a></th>
     </tr>
     {% endfor %}
 </table>
